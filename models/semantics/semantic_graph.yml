@@ -1,0 +1,76 @@
+version: 2
+
+semantic_models:
+  - name: customers
+    model: ref('dim_customers')
+    description: "Our customers semantic_model"
+
+    entities:
+      - name: customer
+        type: primary
+        expr: customer_id
+
+    dimensions:
+      - name: first_name
+        type: categorical
+
+  - name: orders
+    model: ref('fact_orders')
+    description: "Our orders semantic model"
+    entities:
+      - name: order_id
+        type: primary
+      - name: customer
+        type: foreign
+        expr: customer_id
+    dimensions:
+      - name: order_date
+        type: time
+        type_params:
+          is_primary: true
+          time_granularity: day
+
+      - name: order_location
+        type: categorical
+        expr: order_country
+
+    measures:
+      - name: order_total
+        description: "The total value of the order"
+        agg: sum
+
+      - name: order_cost
+        description: "The total expense of the order"
+        agg: sum
+
+      - name: tax_paid
+        description: "The total tax of the order"
+        agg: sum
+
+metrics:
+  - name: revenue
+    description: "Our revenue"
+    type: measure_proxy
+    type_params:
+      measure: order_total
+
+  - name: expenses
+    description: "Our expenses"
+    type: measure_proxy
+    type_params:
+      measure: order_cost
+
+  - name: taxes
+    description: "Our taxes"
+    type: measure_proxy
+    type_params:
+      measure: tax_paid
+
+  - name: profit
+    type: derived
+    type_params:
+      expr: revenue - (expenses + taxes)
+      metrics:
+        - revenue
+        - expenses
+        - taxes

@@ -1,31 +1,30 @@
-# 🥪 The Jaffle Shop 🦘
+# 🥪 A Future of Testing
 
-This is a template for creating a fully functional dbt project for teaching, learning, writing, demoing, or any other scenarios where you need a basic project with a synthesized jaffle shop business.
+Welcome to this design session! Today we are going to walk through what it would be like to configure testing on top of metrics within your dbt project. For this session we are going to use the experimental spec that is being propsoed - all you need to know is that the actual `metric` contains less information than the past!
 
-## How to use
+## The Excercise
 
-### 1. Click the big green 'Use this template' button and 'Create a new repository'.
+You're an Analytics Engineer with the Jaffle Company. You've built out your Semantic Layer inside of dbt but a recent data quality issue led to your company mis-reporting on your key metrics. The CEO accepted responsibility but has asked you to research a way to make sure it doesn't happen again. 
 
-![Click use template](.github/static/use-template.gif)
+You know that your `revenue` metric for January of 2023 had the following properties:
+- The overall revenue was $10,000
+- The revenue in the US was $6,729
+- The revenue on Jan 4th was $800
+- Revenue should always be greater than $100
 
-This will create a new repository exactly like this one, and navigate you there. Make sure to execute the next instructions in that repo.
+With this information, we are going to be walking through 3 proposed designs for testing metrics. It is your responsibility to determine which of these feels the most dbtonic, which is the highest value, and to provide the team with any suggestions that you have!
 
-### 2. Click 'Code', then 'Codespaces, then 'Create codespace on main'.
+### Design 1
+Referencing the [first design in the Notion](https://www.notion.so/dbtlabs/DX-Collaboration-Testing-our-Metrics-2bd3b32ea6c54d46b873ca8575d8861b?pvs=4#0205f77ab44846e9b48f983a82d11120), please implement a test on the revenue metric inside of the [semantic graph file](models/semantics/semantic_graph.yml) for one (or more) of the three known properties.
 
-![Create codespace on main](.github/static/open-codespace.gif)
+A corresponding design document exists in the semantics folder for your convienence. 
 
-This will create a new `codespace`, a sandboxed devcontainer with everything you need for a dbt project. Once the codespace is finished setting up, you'll be ready to run a `dbt build`.
+### Design 2
+Referencing the [second design in the Notion](https://www.notion.so/dbtlabs/DX-Collaboration-Testing-our-Metrics-2bd3b32ea6c54d46b873ca8575d8861b?pvs=4#707fc12eb66e4f8b96dc51754dd0a667), please implement a test on the revenue metric inside of the [semantic graph file](models/semantics/semantic_graph.yml) for one (or more) of the three known properties.
 
-### 3. Make sure to wait til the codespace is finished setting up.
+A corresponding design document exists in the semantics folder for your convienence. 
 
-![Codespaces setup screen at postCreateCommand](.github/static/codespaces-setup-screen.png)
+### Design 3
+Referencing the [third design in the Notion](https://www.notion.so/dbtlabs/DX-Collaboration-Testing-our-Metrics-2bd3b32ea6c54d46b873ca8575d8861b?pvs=4#3e6d528962ce4d58a6c7a64e430c5e60), please implement a test on the revenue metric inside of the [semantic graph file](models/semantics/semantic_graph.yml) for one (or more) of the three known properties.
 
-After the container is built and connected to, VSCode will run a few clean up commands and then a `postCreateCommand`, a set of commands run after the container is set up. This is where we install our dependencies, such as dbt, the duckdb adapter, and other necessities, as well as run `dbt deps` to install the dbt packages we want to use. That screen will look something like the above, when its completed it will close and leave you in a fresh terminal prompt. From there you're ready to do some analytics engineering!
-
-## Contributing
-
-We welcome issues and PRs requesting or adding new features. The package that generates the synthetic data, [`jafgen`](https://pypi.org/project/jafgen/), is also under active development, and will add more types of source data to model as we go along. If you have tests, descriptions, new models, metrics, materializations types, or techniques you use this repo to demonstrate, which you feel would make for a more expansive baseline experience, we encourage you to consider contributing them back in so that this project becomes an even better collective tool for exploring and learning dbt over time.
-
-## Anything else?
-
-That's it! We jaff'd, we cried, we learned about life. If you have any questions or see missing documentation, that's also super helpful to contribute back in via an issue or PR.
+A corresponding design document exists in the semantics folder for your convienence. 
