@@ -1,0 +1,19 @@
+{
+  "name": "jaffle-shop",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "evidence build",
+    "build:strict": "evidence build:strict",
+    "dev": "evidence dev --host 0.0.0.0 --open /",
+    "test": "evidence build",
+    "help": "evidence --help"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@evidence-dev/evidence": "^14.0.0"
+  }
+}
