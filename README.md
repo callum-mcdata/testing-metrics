@@ -25,6 +25,6 @@ Referencing the [second design in the Notion](https://www.notion.so/dbtlabs/DX-C
 A corresponding design document exists in the semantics folder for your convienence. 
 
 ### Design 3
-Referencing the [third design in the Notion](https://www.notion.so/dbtlabs/DX-Collaboration-Testing-our-Metrics-2bd3b32ea6c54d46b873ca8575d8861b?pvs=4#3e6d528962ce4d58a6c7a64e430c5e60), please implement a test on the revenue metric inside of the [semantic graph file](models/semantics/semantic_graph.yml) for one (or more) of the three known properties.
+Referencing the [third design in the Notion](https://www.notion.so/dbtlabs/DX-Collaboration-Testing-our-Metrics-2bd3b32ea6c54d46b873ca8575d8861b?pvs=4#3e6d528962ce4d58a6c7a64e430c5e60), please implement a test on the revenue metric inside of a test file for one (or more) of the three known properties.
 
 A corresponding design document exists in the semantics folder for your convienence. 

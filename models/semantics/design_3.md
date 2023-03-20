@@ -1,10 +1,10 @@
 # Example Design
 
-## Metric File: semantic_graph.yml
+## Metric File: tests/revenue_range.sql
 
 ```sql
 
-with assert_arr_range as (
+with assert_revenue_range as (
 
 	select *
 	from {{ 
@@ -16,6 +16,6 @@ with assert_arr_range as (
 )
 
 select *
-from assert_arr_growth_range
+from assert_revenue_range
 where revenue between 1 and 27
 ```
